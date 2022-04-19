@@ -1,0 +1,8 @@
+@openzeppelin/=lib/openzeppelin-contracts/
+@balancer-v2-monorepo/=lib/balancer-v2-monorepo/
+@balancer-labs/v2-solidity-utils/=lib/balancer-v2-monorepo/pkg/solidity-utils/
+@balancer-labs/v2-vault/=lib/balancer-v2-monorepo/pkg/vault/
+@balancer-labs/v2-asset-manager-utils/=lib/balancer-v2-monorepo/pkg/asset-manager-utils/
+@balancer-labs/v2-pool-utils/=lib/balancer-v2-monorepo/pkg/pool-utils/
+ds-test/=lib/ds-test/src/
+token-price-manager/=lib/SWDAO_TokenPriceManager-Controller/
