@@ -4,9 +4,9 @@ pragma experimental ABIEncoderV2;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {ITokenPriceControllerDefault} from
-	"token-price-manager/src/interfaces/ITokenPriceControllerDefault.sol";
+	"token-price-manager/contracts/interfaces/ITokenPriceControllerDefault.sol";
 import {ITokenPriceManagerMinimal} from
-	"token-price-manager/src/interfaces/ITokenPriceManagerMinimal.sol";
+	"token-price-manager/contracts/interfaces/ITokenPriceManagerMinimal.sol";
 import {IPoolSwapStructs} from "@balancer-labs/v2-vault/contracts/interfaces/IPoolSwapStructs.sol";
 import "@balancer-labs/v2-vault/contracts/interfaces/IVault.sol";
 import "@balancer-labs/v2-solidity-utils/contracts/helpers/BalancerErrors.sol";
