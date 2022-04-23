@@ -53,7 +53,7 @@ contract CustomBalancerPool is IGeneralPool, BalancerPoolToken, ICommonStructs {
 	enum JoinKindPhantom { INIT, COLLECT_PROTOCOL_FEES, TOP_UP_BPT }
 	// Balancer standard
 	enum ExitKindPhantom { EXACT_BPT_IN_FOR_TOKENS_OUT }
- 
+
 	// Must be incremented whenever a new initialize() function is needed for an implementation
 	uint16 constant CONTRACT_VERSION = 100; // Version 1.00;
 
@@ -89,13 +89,13 @@ contract CustomBalancerPool is IGeneralPool, BalancerPoolToken, ICommonStructs {
 	/// @param token The token removed
 	event TokenRemove(address indexed sender, address indexed token);
 	/// @notice Emitted when an ownership transfer has been initiated
-    /// @param sender The transactor
-    /// @param newOwner The address designated as the potential new owner
-    event OwnerTransfer(address indexed sender, address newOwner);
-    /// @notice Emitted when an ownership transfer is confirmed
-    /// @param sender The transactor, and new owner
-    /// @param oldOwner The old owner
-    event OwnerConfirm(address indexed sender, address oldOwner);
+	/// @param sender The transactor
+	/// @param newOwner The address designated as the potential new owner
+	event OwnerTransfer(address indexed sender, address newOwner);
+	/// @notice Emitted when an ownership transfer is confirmed
+	/// @param sender The transactor, and new owner
+	/// @param oldOwner The old owner
+	event OwnerConfirm(address indexed sender, address oldOwner);
 
 	// This constructor is for compatibility's sake only, as the contract is designed to operate
 	// behind a proxy, and the constructor will never be called in that environment
@@ -138,7 +138,7 @@ contract CustomBalancerPool is IGeneralPool, BalancerPoolToken, ICommonStructs {
 		updateCachedProtocolSwapFeePercentage();
 		slot6 = _slot6;
 		initialized[CONTRACT_VERSION] = true;
-	} 
+	}
 
 	/// @notice Adds tokens to the pool by address, but does not increase their balance.
 	/// A token can only be added if it has a TokenPriceManager present in [ORACLE], which
@@ -524,21 +524,21 @@ contract CustomBalancerPool is IGeneralPool, BalancerPoolToken, ICommonStructs {
 		ownerNew = address(0);
 		ownerTransferTimeout = 0;
 		emit OwnerConfirm(msg.sender, _ownerOld);
-    }
+	}
 
 	/// @notice Used to rescue mis-sent tokens from the contract address
 	/// (Can only be called by the contract owner)
-    /// @param _token The address of the token to be rescued
-    function withdrawToken(address _token) external {
-        address _owner = slot6.owner;
-        ExtraStorage.onlyOwner(_owner);
-        _require(IERC20(_token).transfer(
-            	_owner,
-            	IERC20(_token).balanceOf(address(this))
-        	),
+	/// @param _token The address of the token to be rescued
+	function withdrawToken(address _token) external {
+		address _owner = slot6.owner;
+		ExtraStorage.onlyOwner(_owner);
+		_require(IERC20(_token).transfer(
+				_owner,
+				IERC20(_token).balanceOf(address(this))
+			),
 			Errors.SAFE_ERC20_CALL_FAILED
 		);
-    }
+	}
 
 	/// @notice Updates the Balancer protocol's swap fee (Can be called by anyone)
 	function updateCachedProtocolSwapFeePercentage() public {
