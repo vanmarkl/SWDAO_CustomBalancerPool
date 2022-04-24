@@ -6,7 +6,7 @@
 [constprod]:
 https://docs.uniswap.org/protocol/V2/concepts/protocol-overview/glossary#constant-product-formula
 [controller]:
-https://github.com/Peter-Flynn/SWDAO_TokenPriceManager-Controller/blob/42324c307181a9553e95092ed610bbafd4b34ea8/contracts/interfaces/ITokenPriceControllerMinimal.sol
+https://github.com/Peter-Flynn/SWDAO_TokenPriceManager-Controller/blob/master/contracts/interfaces/ITokenPriceControllerMinimal.sol
 [crvEURSUSD]: https://polygon.curve.fi/eursusd
 [cbp]: contracts/CustomBalancerPool.sol
 [CustomBalancerPool.sol]: contracts/CustomBalancerPool.sol
@@ -28,9 +28,9 @@ https://docs.balancer.fi/products/balancer-pools/boosted-pools#phantom-pool-toke
 [sw&nbsp;dao]: https://www.swdao.org/
 [test]: contracts/test
 [tpm]:
-https://github.com/Peter-Flynn/SWDAO_TokenPriceManager-Controller/blob/42324c307181a9553e95092ed610bbafd4b34ea8/contracts/interfaces/ITokenPriceManagerMinimal.sol
+https://github.com/Peter-Flynn/SWDAO_TokenPriceManager-Controller/blob/master/contracts/interfaces/ITokenPriceManagerMinimal.sol
 [transparent proxy]:
-https://github.com/OpenZeppelin/openzeppelin-contracts/blob/5a75065659a65e65bb04890192e3a4bcb7917fff/contracts/proxy/transparent/TransparentUpgradeableProxy.sol
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/proxy/TransparentUpgradeableProxy.sol
 [uni]: https://docs.uniswap.org/protocol/V2/concepts/protocol-overview/how-uniswap-works
 [vault]: lib/balancer-v2-monorepo/pkg/vault/contracts/interfaces/IVault.sol
 
