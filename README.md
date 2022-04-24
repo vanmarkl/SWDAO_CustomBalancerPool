@@ -7,7 +7,7 @@
 https://docs.uniswap.org/protocol/V2/concepts/protocol-overview/glossary#constant-product-formula
 [controller]:
 https://github.com/Peter-Flynn/SWDAO_TokenPriceManager-Controller/blob/master/contracts/interfaces/ITokenPriceControllerMinimal.sol
-[crvEURSUSD]: https://polygon.curve.fi/eursusd
+[crvEURTUSD]: https://polygon.curve.fi/eurtusd
 [cbp]: contracts/CustomBalancerPool.sol
 [CustomBalancerPool.sol]: contracts/CustomBalancerPool.sol
 [exstor]: contracts/ExtraStorage.sol
@@ -72,7 +72,7 @@ available directly through a custom website.
 - Manages tokens within configurable categories.
   - [SW&nbsp;DAO][] products ([SWAP][], [SWYF][], [QMB][], etc.)
   - Common tokens (wETH, LINK, wMATIC, etc.)
-  - National currencies (USDC, DAI, [am3CRV][], [crvEURSUSD][], etc.)
+  - National currencies (USDC, DAI, [am3CRV][], [crvEURTUSD][], etc.)
 
   Any token may be placed within these three categories.
 - Allows for changing the weights of these categories, relative to one-another.
