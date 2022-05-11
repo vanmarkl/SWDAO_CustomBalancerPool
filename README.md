@@ -33,6 +33,7 @@ https://github.com/Peter-Flynn/SWDAO_TokenPriceManager-Controller/blob/master/co
 https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/proxy/TransparentUpgradeableProxy.sol
 [uni]: https://docs.uniswap.org/protocol/V2/concepts/protocol-overview/how-uniswap-works
 [vault]: lib/balancer-v2-monorepo/pkg/vault/contracts/interfaces/IVault.sol
+[verify]: contracts/verify
 
 <p align="center">
 	<img src=".github/images/SW DAO Logo Vertical.png#gh-light-mode-only"
@@ -186,12 +187,9 @@ $ forge create <args> contracts/ExtraStorage.sol:ExtraStorage
 $ forge create <args> --libraries contracts/ExtraStorage.sol:ExtraStorage:<address> contracts/CustomBalancerPool.sol:CustomBalancerPool
 ```
 ### Using [Remix][]
-> Note<br />
-> "Verify" folders/files not yet available
-
-This repo. provides flattened contract code in folders titled "verify". These files correspond to
-each of the major contracts, and can be safely ported into [Remix][] for testing, and deployment.
-They're also intended for use in [Polygonscan][] verification. Deploy the
+This repo. provides flattened contract code in folders titled "[verify][]". These files correspond
+to each of the major contracts, and can be safely ported into [Remix][] for testing, and
+deployment. They're also intended for use in [Polygonscan][] verification. Deploy the
 [`ExtraStorage` library][exstor] first, then point [Remix][] to include the deployed library's
 address during deployment of the [`CustomBalancerPool`][cbp].
 ## Swap Functionality
