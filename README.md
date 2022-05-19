@@ -152,6 +152,9 @@ Transfers the pool's ownership from its current owner, to the new address. Must 
 Finalizes an ownership transfer.
 - `withdrawToken(address)`<br />
 Rescues mis-sent ERC20 tokens from the contract address.
+- `burnPoolTokens(uint)`<br />
+Burns [BPT][] from the caller's wallet. Only useful for artificially increasing the price of
+the [BPT][].
 
 See [CustomBalancerPool.sol][] for more detail.
 ## Development

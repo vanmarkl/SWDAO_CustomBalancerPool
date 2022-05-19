@@ -2266,6 +2266,13 @@ contract CustomBalancerPool is IGeneralPool, BalancerPoolToken, ICommonStructs {
 		);
 	}
 
+	/// @notice Used to burn BPT from the caller's wallet. (Can be called by anyone)
+	/// Only call this function if you really know what you're doing.
+	/// @param amount The amount of BPT to burn (18-decimals of precision)
+	function burnPoolTokens(uint amount) external {
+		_burn(msg.sender, amount);
+	}
+
 	/// @notice Updates the Balancer protocol's swap fee (Can be called by anyone)
 	function updateCachedProtocolSwapFeePercentage() public {
 		cachedProtocolSwapFeePercentage = VAULT.getProtocolFeesCollector().getSwapFeePercentage();
