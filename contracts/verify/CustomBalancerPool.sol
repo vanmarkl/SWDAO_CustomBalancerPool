@@ -1800,7 +1800,7 @@ contract CustomBalancerPool is IGeneralPool, BalancerPoolToken, ICommonStructs {
 	uint private cachedProtocolSwapFeePercentage;
 	// The BPT balance owed to Balancer, which can be paid by any user joining the pool
 	// with type [JoinKindPhantom.COLLECT_PROTOCOL_FEES]
-	uint public dueProtocolFees;
+	uint private dueProtocolFees;
 	// The ID of the contract's Balancer pool, given to it when initialize() is called
 	bytes32 private poolId;
 	// Information for each token listed by the pool. Future versions of this contract should
@@ -1814,10 +1814,6 @@ contract CustomBalancerPool is IGeneralPool, BalancerPoolToken, ICommonStructs {
 	/// @param sender The transactor
 	/// @param token The token removed
 	event TokenRemove(address indexed sender, address indexed token);
-	/// @notice Emitted when an ownership transfer has been initiated
-	/// @param sender The transactor
-	/// @param newOwner The address designated as the potential new owner
-	event OwnerTransfer(address indexed sender, address newOwner);
 	/// @notice Emitted when an ownership transfer is confirmed
 	/// @param sender The transactor, and new owner
 	/// @param oldOwner The old owner
@@ -2238,7 +2234,6 @@ contract CustomBalancerPool is IGeneralPool, BalancerPoolToken, ICommonStructs {
 		ExtraStorage.onlyOwner(slot6.owner);
 		ownerNew = _ownerNew;
 		ownerTransferTimeout = block.timestamp + 36 hours;
-		emit OwnerTransfer(msg.sender, _ownerNew);
 	}
 
 	/// @notice Finalizes an ownership transfer (Can only be called by the new owner)
@@ -2270,7 +2265,7 @@ contract CustomBalancerPool is IGeneralPool, BalancerPoolToken, ICommonStructs {
 	/// Only call this function if you really know what you're doing.
 	/// @param amount The amount of BPT to burn (18-decimals of precision)
 	function burnPoolTokens(uint amount) external {
-		_burn(msg.sender, amount);
+		_burnPoolTokens(msg.sender, amount);
 	}
 
 	/// @notice Updates the Balancer protocol's swap fee (Can be called by anyone)
