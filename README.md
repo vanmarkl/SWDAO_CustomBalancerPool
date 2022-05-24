@@ -65,8 +65,8 @@ Typically, the end-user will never interact with the pool directly.
 ["User" functions](#user-functions) serve to assist in requests for data, and
 ["owner" functions](#owner-functions) assist with pool management, but all functionality relevant
 to an end-user is abstracted away through [Balancer][]'s interfaces. As such, all end-user
-functionality is accessible through [Balancer][], [Matcha][], and [1inch][], but can also be made
-available directly through a custom website.
+functionality is ~~accessible through [Balancer][], [Matcha][], and [1inch][], but can also be
+made~~ available directly through a custom website.
 ### Functionality
 - Creates a fully-functional [Balancer][] pool, with non-standard features.
 - Allows tokens to be added to, or removed from the pool at will.
